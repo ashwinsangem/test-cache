@@ -4,13 +4,13 @@ on:
 
 jobs:
   build:
-    runs-on:  windows-latest
+    runs-on:  ubuntu-latest
     steps:
     - uses: actions/cache@5c0fd51138cc2b5fd24d728a970b8841df47464d
       id: cache
       with:
         path: /tmp/datacache
-        key: windows_cache_50_9
+        key: ubuntu_cache_50_9
     - if: steps.cache.outputs.cache-hit != 'true'
       run: |
         rm -rf /tmp/datacache
